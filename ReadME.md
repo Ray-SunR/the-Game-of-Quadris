@@ -6,7 +6,7 @@ The program can be compiled by using the following command:
 make (make -f Makefile)
 
 An executable called "quadris" will be produced.
-
+ 
 ####Note: that the proper XLib is necessary for compilation. Please refer to the makefile for more information.####
 
 ##Commands:
