@@ -36,7 +36,7 @@ Your program should support the following options on the command line:
 runs the program in text-only mode. No graphics are displayed. The default behaviour (no -text) is to show both text and graphics.
  * -seed xxx
 sets the random number generator�s seed to xxx. If you don�t set the seed, you always get the same random sequence every time you run the program. It it good for testing, but not much fun.
- * -scriptfile xxx
+ * -scriptfile xxx   
 Uses xxx instead of sequence.txt as a source of blocks for level 0.
  * -startlevel n
 Starts the game in level n. The game starts in level 0 if this option is no supplied.
