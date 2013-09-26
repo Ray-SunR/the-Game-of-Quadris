@@ -31,7 +31,7 @@ Decreases the difficulty level of the game by one. The block showing as next sti
 Clears the board and starts a new game.
 
 ##Command-line Interface:
-Your program should support the following options on the command line:
+Your program should support the following options on the command line:   
  * -text
 runs the program in text-only mode. No graphics are displayed. The default behaviour (no -text) is to show both text and graphics.
  * -seed xxx
