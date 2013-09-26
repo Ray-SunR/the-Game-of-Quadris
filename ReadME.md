@@ -1,5 +1,5 @@
 #The Game of Quadris
-Contributor: Renchen Sun(Ray), Chi Zhang(Ace)
+Contributor: Renchen Sun(Ray), Chi Zhang(Ace)   
 
 ##Compilation
 The program can be compiled by using the following command:
