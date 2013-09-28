@@ -9,7 +9,7 @@ CXXFLAGS=-I${INCDIR} -g -Wall -c
 SOURCES=${wildcard ${SRCDIR}/*.cpp}
 OBJECTS=${patsubst ${SRCDIR}/%.cpp, ${OBJDIR}/%.o,${SOURCES}}
 EXEC=quadris
-
+   
 $(EXEC) : $(OBJECTS)
 	$(CXX) -g -lX11 $(INCLUDE) $(OBJDIR)/*.o -o $(EXEC)
 
