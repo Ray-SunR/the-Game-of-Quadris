@@ -8,7 +8,7 @@
 
 #ifndef __Project__abstractblock__
 #define __Project__abstractblock__
-
+    
 #include <iostream>
 #include <vector>
 #include <map>
@@ -54,9 +54,9 @@ public:
     void setRefCoord(coordinate& c, Grid* gd);//set the reference coordinate to c
     void shiftLeft(Grid* gd);//shift left
     void shiftRight(Grid* gd);//shift right
-    void shiftDown(Grid* gd);//shift down
+    void shiftDown(Grid* gd);//shift down     
     bool Fall(Grid* gd);//drop a block
     bool canBeDraw(Grid* gd);//check whether the this block can be drawn on the grid.
     char getShape() const {return shape;}//answer which type of block it is.
 };
-#endif /* defined(__Project__abstractblock__) */
+#endif /* defined(__Project__abstractblock__) */   
