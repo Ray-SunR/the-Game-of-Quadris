@@ -2,7 +2,7 @@
 Contributor: Renchen Sun(Ray), Chi Zhang(Ace)   
 
 ##Compilation
-The program can be compiled by using the following command:
+The program can be compiled by using the following command:     
 make (make -f Makefile)
 
 An executable called "quadris" will be produced.
