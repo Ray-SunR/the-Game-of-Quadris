@@ -52,35 +52,35 @@ Game::~Game()
         delete subGdisplay;//free sub-graphic display
     }
     //    delete ab;
-    delete next;//free level
+    delete next;//free level     
     delete interpreter;//free command-line interpreter
     delete scoreboard;//free scoreboard.
 }
 
-//restart
+//restart    
 void Game::restart()
 {
     delete gd;//free grid;
     delete subgd;//free sub-grid
-    delete interpreter;//free command-line interpreter
+    delete interpreter;//free command-line interpreter   
     delete next;//free level
-    //    delete ab;
+    //    delete ab;   
     if (!textOnly)//if it is a graphic display
     {
-        delete gdisplay;//free graphic display
+        delete gdisplay;//free graphic display   
         delete subGdisplay;//free sub-graphic display
     }
     gdisplay = NULL;
     subGdisplay = NULL;
     for (int i = 0; i < vBlock.size(); i++)//free blocks
         delete vBlock[i];
-    //Should clear the vector
+    //Should clear the vector    
     vBlock.clear();
     //Should reset the game board.
     scoreboard->resetScore();
     //start again
     start();
-}
+}    
 
 //generate the next block
 AbstractBlock* Game::generateNextBlock(char c, Grid* gd, nextBlock* updateLevel)
@@ -95,7 +95,7 @@ AbstractBlock* Game::generateNextBlock(char c, Grid* gd, nextBlock* updateLevel)
             //J block
             ab = new JBlock(gd, updateLevel->getNumLevel());
             break;
-        case 'L':
+        case 'L':   
             //L block
             ab = new LBlock(gd, updateLevel->getNumLevel());
             break;
@@ -106,7 +106,7 @@ AbstractBlock* Game::generateNextBlock(char c, Grid* gd, nextBlock* updateLevel)
         case 'S':
             //S block
             ab = new SBlock(gd, updateLevel->getNumLevel());
-            break;
+            break;   
         case 'Z':
             //Z block
             ab = new ZBlock(gd, updateLevel->getNumLevel());
@@ -122,7 +122,7 @@ AbstractBlock* Game::generateNextBlock(char c, Grid* gd, nextBlock* updateLevel)
 }
 
 //start the game
-void Game::start()
+void Game::start()   
 {
     //if it is not text-only
     if (!textOnly)
@@ -150,7 +150,7 @@ void Game::start()
         gdisplay->drawFace();
     //if it is graphic display
     if (gdisplay)
-        //update the level in the window
+        //update the level in the window   
         gdisplay->updateLevel(next->getNumLevel());
     //if the scoreboard has already existed, then don't create a new scoreboard, otherwise, should create a new scoreboard.
     if (!scoreboard)
@@ -164,7 +164,7 @@ void Game::start()
     {
         gdisplay->drawLifeText();
         gdisplay->updateLife(life);
-    }
+    }     
     string command;
     char c = next->startRun();//determine which block is the first block
     char cnext = next->startRun();//determine which block is the next
@@ -179,7 +179,7 @@ void Game::start()
     vBlock.push_back(abnext);
     //display the information on board.
     Display(gd, subgd, next, scoreboard);
-    while (cin >> command)
+    while (cin >> command)   
     {
         //check if the command was restart.
         if (interpreter->isRestart(command))
@@ -191,7 +191,7 @@ void Game::start()
         int t;//used to store how many times a command runs
         int pos = -1;
         while (command[pos + 1] <= 57 && command[pos + 1] >= 48)//check whether it is a multiple command
-            pos++;
+            pos++;   
         //determine if the command was a multiple command
         if (pos != -1)
         {
@@ -200,7 +200,7 @@ void Game::start()
             string time = command.substr(0, pos + 1);
             subCommand = command.substr(pos + 1, command.length() - time.length());
             stringstream ss(time);
-            ss >> t;
+            ss >> t;   
             playing = interpreter->multipleCommand(t, subCommand, &ab, &abnext, gd, subgd, next, scoreboard, vBlock, gdisplay);
         }
         //otherwise, it is a single command
@@ -211,7 +211,7 @@ void Game::start()
         Display(gd, subgd, next, scoreboard);
         //if the game was over, then end the game.
         if (!playing)//if not playing, either game over or input is exausted, then terminate the game
-        {
+        {   
             if (!lifeMode)//if it is not a life Mode, then exit the game.
             {
                 cout << "game over!" << endl;
