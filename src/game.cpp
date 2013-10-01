@@ -231,6 +231,6 @@ void Game::start()
 
 void Game::end()
 {
-    delete this;
+    delete this;//End the game. Destructor will be called automatically.
 }
 
