@@ -37,11 +37,11 @@ void AbstractBlock::shiftRight(Grid* gd)
     undraw(gd);
     if (canBeSRight(getRightCorner().y, gd))//check if this block can be shifted right
     {
-        refcoord.y++;//y increases by 1
-        update(gd);//update the new coordinate of this block
+        refcoord.y++;//y increases by 1  
+        update(gd);//update the new coordinate of this block   
         draw(gd, level);//draw the block
     }
-    else//otherwise it can't be shifted to right, retain the same.
+    else//otherwise it can't be shifted to right, retain the same.   
         draw(gd, level);
 }
 
@@ -55,7 +55,7 @@ void AbstractBlock::shiftDown(Grid* gd)
         update(gd);//updadate the coordinates of this block
         draw(gd, level);//draw the block to the new position
     }
-    else
+    else   
         draw(gd, level);
 }
 
