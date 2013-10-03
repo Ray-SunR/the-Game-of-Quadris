@@ -17,5 +17,5 @@ ${OBJDIR}/%.o : $(addprefix $(SRCDIR)/, %.cpp)
 	$(CXX) ${CXXFLAGS} $< -o $@
 
 .PHONY : clean
-clean:
-	rm -f $(OBJDIR)/*.o  $(BINDIR)/* $(EXEC) > /dev/null  2>&1
+clean:     
+	rm -f $(OBJDIR)/*.o  $(BINDIR)/* $(EXEC) > /dev/null  2>&1     
