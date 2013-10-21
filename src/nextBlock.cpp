@@ -48,7 +48,7 @@ void nextBlock::subLevel()
 {
     //boundray checking
     if (numLevel > 0)
-        numLevel = numLevel - 1;
+        numLevel = numLevel - 1;  
 }
 
 //will determine which block comes next based on whcih level it is.
@@ -136,7 +136,7 @@ char nextBlock:: startRun()
 		else if(lotto == 1)
             return 'J';
 		else if(lotto == 2)
-            return 'L';
+            return 'L';  
 		else if(lotto == 3)
             return 'O';
 		else if(lotto == 4 || lotto == 5)
