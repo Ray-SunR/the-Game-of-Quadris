@@ -98,7 +98,7 @@ void GraphicDisplay::updateLevel(int Level)
     stringstream ss;
     ss << Level;
     string level;
-    ss >> level;
+    ss >> level;  
     //erase the original level
     xw->fillRectangle(14 * cellSize - rowNum, 3 * cellSize, cellSize, cellSize, Xwindow::White);
     //update the new level.
@@ -108,10 +108,10 @@ void GraphicDisplay::updateLevel(int Level)
 void GraphicDisplay::updateLife(int Life)
 {
     //convert the integer to string
-    stringstream ss;
+    stringstream ss;  
     ss << Life;
     string life;
-    ss >> life;
+    ss >> life;  
     //erase the original score
     xw->fillRectangle(13 * cellSize - 15, 6 * cellSize + 15, 4 * cellSize , cellSize, Xwindow::White);
     for (int i = 0; i < Life; i++)
@@ -119,12 +119,12 @@ void GraphicDisplay::updateLife(int Life)
 }
 
 void GraphicDisplay::drawLifeText()
-{
+{   
     xw->drawString(10 * cellSize + 3, 7 * cellSize, "Life: ", Xwindow::Black);
 }
 
 void GraphicDisplay::drawFace()
-{
+{  
     int refx = 11 * cellSize;
     int refy = 12 * cellSize - 20;
     int scellSize = cellSize / 2; 
