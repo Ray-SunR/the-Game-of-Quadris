@@ -23,7 +23,7 @@ Xwindow::Xwindow(int width, int height) {
 
   Pixmap pix = XCreatePixmap(d,w,width,
         height,DefaultDepth(d,DefaultScreen(d)));
-  gc = XCreateGC(d, pix, 0,(XGCValues *)0);
+  gc = XCreateGC(d, pix, 0,(XGCValues *)0);   
 
   XFlush(d);
   XFlush(d);
@@ -43,7 +43,7 @@ Xwindow::Xwindow(int width, int height) {
       }
       colours[i]=xcolour.pixel;
   }
-
+  
   XSetForeground(d,gc,colours[Black]);
 
   // Make window non-resizeable.
@@ -55,7 +55,7 @@ Xwindow::Xwindow(int width, int height) {
 
   XSynchronize(d,True);
 
-  usleep(1000);
+  usleep(1000);  
 }
 
 Xwindow::~Xwindow() {
@@ -67,7 +67,7 @@ void Xwindow::fillRectangle(int x, int y, int width, int height, int colour) {
   XSetForeground(d, gc, colours[colour]);
   XFillRectangle(d, w, gc, x, y, width, height);
   XSetForeground(d, gc, colours[Black]);
-}
+}  
 
 void Xwindow::drawString(int x, int y, string msg, int colour) {
   XSetForeground(d, gc, colours[colour]);
