@@ -7,7 +7,7 @@
 //
 
 #include <sstream>
-
+        
 #include "grapicdisplay.h"
 #include "window.h"
 
