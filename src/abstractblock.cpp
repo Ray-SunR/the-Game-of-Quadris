@@ -9,7 +9,7 @@
 #include <iostream>
 
 #include "abstractblock.h"
-#include "grid.h"
+#include "grid.h"  
 #include "cell.h"
 
 using namespace std;
@@ -42,7 +42,7 @@ void AbstractBlock::shiftRight(Grid* gd)
         draw(gd, level);//draw the block
     }
     else//otherwise it can't be shifted to right, retain the same.   
-        draw(gd, level);
+        draw(gd, level);   
 }
 
 //shift the block down by 1 position
@@ -78,7 +78,7 @@ bool AbstractBlock::Fall(Grid* gd)
         //here the game should be over.
         draw(gd, level);
         return false;
-    }
+    }   
 }
 
 //draw method will either draw the block in the graphic display, and text display
@@ -88,7 +88,7 @@ void AbstractBlock::draw(Grid* gd, int level)
     //traverse all the cell this block has, and set all the cells to live.
     for (int i = 0; i < 4; i++)
     {
-        maCell[currentType][i]->setLiving(shape, level);
+        maCell[currentType][i]->setLiving(shape, level);  
         maCell[currentType][i]->notifyDisplay(*gd->getTextDisplay());
     }
 }
@@ -107,11 +107,14 @@ void AbstractBlock::undraw(Grid* gd)
 bool AbstractBlock::canBeDropped(int r, Grid *gd)
 {
     coordinate fakeRef;//fake reference coordinate.
-    if (this->shape == 'I' && this->currentType == 1)//check for special case where this block is 'I', because the coordinate system was different.
-        fakeRef = coordinate(r - 1, getRefCoord().y);
+    if (this->shape == 'I' && this->currentType == 1)
+    //check for special case where this block is 'I', because the coordinate system was different.
+        fakeRef = coordinate(r - 1, getRefCoord().y);  
     else
-        fakeRef = coordinate(r, getRefCoord().y);//the new potential reference coordinate would be (r, y)
-    vector<coordinate> potentialVcoor;//used to store the potential coordinates of this block in the position where the reference coordiante is (r, y).
+        fakeRef = coordinate(r, getRefCoord().y);
+        //the new potential reference coordinate would be (r, y)
+    vector<coordinate> potentialVcoor;
+    //used to store the potential coordinates of this block in the position where the reference coordiante is (r, y).
     calculatePotentialPos(fakeRef, potentialVcoor);//polymorphism happens
     //traverse throught the cells this block has and check either they are out of boundary or is occupied by other blocks. If either case was true, then means it can't be dropped.
     for (int i = 0; i < 4; i++)
