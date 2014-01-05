@@ -30,7 +30,7 @@ void AbstractBlock::shiftLeft(Grid* gd)
     else//otherwise it can't be shifted to right, retain the same.
         draw(gd, level);
 }
-
+ 
 //shift the block to right by 1 position
 void AbstractBlock::shiftRight(Grid* gd)
 {
