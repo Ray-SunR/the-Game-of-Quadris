@@ -56,5 +56,6 @@ int main(int argc, const char * argv[])
     }
     g->start();
     g->end();
+    delete g;
 }
 
